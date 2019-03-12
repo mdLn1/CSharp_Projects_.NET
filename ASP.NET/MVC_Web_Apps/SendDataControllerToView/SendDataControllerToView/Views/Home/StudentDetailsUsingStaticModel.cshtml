@@ -1,0 +1,38 @@
+﻿@model Student
+
+@{
+    ViewData["Title"] = "Privacy Policy";
+}
+<h1>Static Model</h1>
+
+@*
+    As it can be seen in the view all the input fields are populated with values from the model passed    
+*@
+
+<div class="container">
+    <div class="form-group">
+        <label class="form-control">
+            Student name:
+        </label>
+        <input value="@Model.Name" class="form-control"  style="border:5px solid blue;"/>
+    </div>
+    <div class="form-group">
+        <label class="form-control">
+            Student Date of Birth:
+        </label>
+       <input value="@Model.DateOfBirth.ToString("yyyy/MM/dd")" style="border:5px solid blue;" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label class="form-control">
+            Student Age:
+        </label>
+        <input value="@Model.Age" style="border:5px solid blue;" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label class="form-control">
+            Student Programme of Study:
+        </label>
+       <input value="@Model.ProgrammeOfStudy" class="form-control"  style="border:5px solid blue;"/>
+    </div>
+</div>
+
