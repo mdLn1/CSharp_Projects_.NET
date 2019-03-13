@@ -1,0 +1,43 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h1>Dynamic Model</h1>
+
+<div class="container">
+    @* This form was created in order to send data to the action SendDynamicModel in homecontroller,
+        also the type of the request is mentioned using method*@
+    <form asp-action="SendDynamicModel" method="post">
+        <div class="form-group">
+            <label class="form-control">
+                Student name:
+            </label>
+            @* as in the previous example we can see that the name parameter is used for fetching data from view,
+                asp-for is not used as there is no information about the property called Name(or studentName)*@
+            <input name="studentName" class="form-control" style="border:5px solid blue;" />
+        </div>
+        <div class="form-group">
+            <label class="form-control">
+                Student Date of Birth:
+            </label>
+
+            <input name="studentDateOfBirth" type="date" class="form-control" style="border:5px solid blue;" />
+        </div>
+        <div class="form-group">
+            <label class="form-control">
+                Student Age:
+            </label>
+            <input name="studentAge" class="form-control" style="border:5px solid blue;" />
+        </div>
+        <div class="form-group">
+            <label class="form-control">
+                Student Programme of Study:
+            </label>
+
+            <input name="studentProgrammeOfStudy" class="form-control" style="border:5px solid blue;" />
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Send" class="btn btn-primary" />
+        </div>
+    </form>
+</div>
