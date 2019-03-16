@@ -1,0 +1,41 @@
+﻿@model Student
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+@*needed for client side validation, without it user must click the check form button to get feedback
+    validation will take place in the controller*@
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+<div class="container">
+    <form asp-action="Index" method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <div class="form-group">
+            @* label display the content from Display in model *@
+            <label asp-for="Name" class="control-label"></label>
+            @* input gets the value of the Name property *@
+            <input asp-for="Name" class="form-control" />
+            @* span shows the messages for the errors resulted from the input validation*@
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="DateOfBirth" class="control-label"></label>
+            <input asp-for="DateOfBirth" class="form-control" />
+            <span asp-validation-for="DateOfBirth" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Age" class="control-label"></label>
+            <input asp-for="Age" class="form-control" />
+            <span asp-validation-for="Age" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Check form" class="btn btn-primary" />
+        </div>
+    </form>
+</div>
+

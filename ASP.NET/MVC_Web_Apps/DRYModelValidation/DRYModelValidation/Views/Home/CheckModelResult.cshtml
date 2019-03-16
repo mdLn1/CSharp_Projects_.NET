@@ -1,0 +1,16 @@
+﻿@model dynamic
+
+@{
+    ViewData["Title"] = "Successful!";
+}
+<h1>@ViewData["Title"]</h1>
+
+@if((bool)@ViewData["success"])
+{
+<div class="bg-success">
+    <span class="font-weight-bold text-light">
+        @ViewData["message"]
+    </span>
+</div>
+
+}
